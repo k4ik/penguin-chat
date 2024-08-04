@@ -7,9 +7,11 @@
     <link rel="shortcut icon" href="/assets/images/gif.webp" type="image/x-icon">
     <link rel="stylesheet" href="assets/styles/index.css">
     <link rel="stylesheet" href="assets/styles/auth.css">
+    <link rel="stylesheet" href="assets/styles/box.css">
 </head>
 <body>
     <main>
+        <div class="box"></div>
         <img src="/assets/images/gif.webp" class="penguin" />
         <form id="form">
             <fieldset>
@@ -37,9 +39,14 @@
         })
         .then (response => response.json())
         .then (data => {
-            console.log(data.error);
+            let box = document.querySelector(".box");
+            box.innerHTML = data.error;
+            box.style.display = "block";
+            setInterval(() => {
+                box.style.display = "none";
+            }, 4000)
         })
-        .fetch(error => {
+        .catch(error => {
             console.log(error);
         })
     </script>
