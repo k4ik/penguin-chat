@@ -1,4 +1,7 @@
 <?php
+$dotenv = Dotenv\Dotenv::createImmutable("../" . __DIR__);
+$dotenv->load();
+
 $host = $_ENV["DB_HOST"];
 $pass = $_ENV["DB_PASS"];
 $username = $_ENV["DB_USER"];
