@@ -98,11 +98,11 @@
         <form>
             <fieldset>
                 <img src="/resources/images/user.svg" alt="user svg" class="input-img" />
-                <input type="text" name="username" id="username" placeholder="Username" />
+                <input type="text" name="username" id="username" placeholder="Username" required />
             </fieldset>
             <fieldset>
                 <img src="/resources/images/lock.svg" alt="lock svg" class="input-img" />
-                <input type="password" name="password" id="password" placeholder="Password"  />
+                <input type="password" name="password" id="password" placeholder="Password" required />
             </fieldset>
             <button>Login</button>
         </form>
