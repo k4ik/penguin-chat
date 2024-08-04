@@ -11,7 +11,7 @@
 <body>
     <main>
         <img src="/assets/images/gif.webp" class="penguin" />
-        <form>
+        <form id="form">
             <fieldset>
                 <img src="/assets/images/user.svg" alt="user svg" class="input-img" />
                 <input type="text" name="username" id="username" placeholder="Username" required />
@@ -28,5 +28,20 @@
         </form>
         <p>Already have an account? <a href="/login">Log in</a></p>
     </main>
+    <script>
+        let formData = new FormData(document.querySelector("#form"));
+        let baseUrl = "http://localhost:8000";
+        fetch(`${baseUrl}/signup`, {
+            method: "POST",
+            body: formData
+        })
+        .then (response => response.json())
+        .then (data => {
+            console.log(data.error);
+        })
+        .fetch(error => {
+            console.log(error);
+        })
+    </script>
 </body>
 </html>
